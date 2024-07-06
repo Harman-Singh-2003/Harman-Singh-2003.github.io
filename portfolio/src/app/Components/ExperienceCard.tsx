@@ -1,28 +1,32 @@
 import React from "react";
 
 interface Props {
-  // Define the props for your component here
+  company: string;
+  position: string;
+  date: string;
+  description: string;
 }
 
-const ExperienceCard: React.FC<Props> = (props) => {
-  // Implement your component logic here
+const ExperienceCard: React.FC<Props> = ({company, position, date, description}) => {
 
   return (
-    // JSX code for your component goes here
-    <div className=" bg-slate-300 p-4 flex">
-      <div className="bg-yellow-500 size-40">Image</div>
-      <div className="pl-4 flexflex-col flex-grow">
-        <div className="bg-indigo-800 flex justify-between items-center">
-          <div>
-            <div className="text-xl">Company</div>
-            <div className="text-lg">Position</div>
+    <div className="p-4 flex rounded-xl">
+      <img src="/next.svg" className="size-40"/>
+      <div className="pl-4 flex flex-col flex-grow">
+        <div className="flex justify-between items-center">
+          <div className="flex">
+            <div className="text-xl">{company}</div>
+            <div className="text-lg">-</div>
+            <div className="text-lg">{position}</div>
           </div>
-          <div className="text-sm">Date</div>
+          <div className="text-sm">{date}</div>
         </div>
-        <div className="bg-green-800">Description</div>
+        <div className="800">{description}</div>
       </div>
     </div>
   );
 };
+
+//bg-white bg-opacity-20 backdrop-blur-xl shadow-[inset_0px_0px_50px_5px_rgba(255,255,255,0.15)]
 
 export default ExperienceCard;
