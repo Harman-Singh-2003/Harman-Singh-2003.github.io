@@ -2,6 +2,7 @@ import React from "react";
 import ExperienceCard from "./Components/ExperienceCard";
 import Skill from "./Components/Skill";
 import typescriptImg from "./Images/typescriptLogo.png";
+import Link from "./Components/Link";
 
 interface SkillData {
   text: string;
@@ -16,8 +17,9 @@ interface SkillsData {
 export default function Home() {
   const introData = {
     name: "Harman Singh",
-    introText:
-      "Aspiring full-stack software engineer currently in my 3rd of Engineering at the University of Guelph",
+    subheading: "Aspiring Software Engineer",
+    mainText:
+      "Completed my third year of Engineering at the University of Guelph. I am passionate about software development and am always looking to learn new technologies and improve my skills.",
     resumeLink: "Resume",
     githubLink: "Github",
     linkedin: "LinkedIn",
@@ -28,25 +30,27 @@ export default function Home() {
       company: "Company 1",
       position: "Position 1",
       date: "Date 1",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+      description: "Description 1",
+      image: "/Images/CienaLogo.png",
     },
     {
       company: "Company 2",
       position: "Position 2",
       date: "Date 2",
       description: "Description 2",
+      image: "/Images/WaveLogo.webp",
     },
     {
       company: "Company 3",
       position: "Position 3",
       date: "Date 3",
       description: "Description 3",
+      image: "/Images/CBGLogo.png",
     },
   ];
 
   const skillsData: SkillsData = {
-    typescript:{
+    typescript: {
       text: "TypeScript",
       imgSrc: "/Images/typescriptLogo.png",
       altText: "TypeScript Logo",
@@ -137,13 +141,28 @@ export default function Home() {
     return (
       <div className="flex flex-row justify-around">
         <div className="flex-col m-4 flex-grow">
-          <div className="my-4 text-3xl font-bold">{introData.name}</div>
-          <div className="m-4">{introData.introText}</div>
+          <div className="my-4 text-8xl font-bold">{introData.name}</div>
+          <div className="my-4 ml-2 text-xl">{introData.subheading}</div>
+          <div className="my-8 ml-2 text-base text-slate-300">
+            {introData.mainText}
+          </div>
         </div>
-        <div className="flex flex-col m-4 flex-grow max-w-64">
-          <div className="m-4">Resume</div>
-          <div className="m-4">Github</div>
-          <div className="m-4">LinkedIn</div>
+        <div className="flex flex-col m-4 flex-grow max-w-64 justify-center">
+        <Link
+          name="Resume"
+          href="/Files/HarmanSinghResume.pdf"
+          iconSrc="/Images/resumeLogo.png"
+        />
+        <Link
+          name="Github"
+          href="https://github.com/Harman-Singh-2003"
+          iconSrc="/Images/githubLogo.png"
+        />
+        <Link
+          name="LinkedIn"
+          href="https://www.linkedin.com/in/harman-singh2003/"
+          iconSrc="/Images/linkedinLogo.webp"
+        />
         </div>
       </div>
     );
@@ -167,7 +186,7 @@ export default function Home() {
 
   const Skills: React.FC = () => {
     return (
-      <div className="mx-4">
+      <div className="m-4">
         {Object.keys(skillsData).map((key, index) => {
           const skill = skillsData[key];
           return (
@@ -193,6 +212,7 @@ export default function Home() {
             position={experience.position}
             date={experience.date}
             description={experience.description}
+            image={experience.image}
           />
         ))}
       </div>
@@ -214,11 +234,17 @@ export default function Home() {
       <div className="mx-auto min-h-screen max-w-screen-xl">
         <Header />
         {/* <NavBar /> */}
-        <div className="p-4 text-left text-2xl font-bold">Skills</div>
+        <div className="p-4 text-left text-2xl font-bold border-b-2 border-white border-opacity-20">
+          Skills
+        </div>
         <Skills />
-        <div className="p-4 text-left text-2xl font-bold">Experience</div>
+        <div className="p-4 text-left text-2xl font-bold border-b-2 border-white border-opacity-20">
+          Experience
+        </div>
         <Experience />
-        <div className="p-4 text-left text-2xl font-bold">Projects</div>
+        <div className="p-4 text-left text-2xl font-bold border-b-2 border-white border-opacity-20">
+          Projects
+        </div>
         <Projects />
       </div>
     </main>

@@ -1,17 +1,33 @@
 import React from "react";
+import Image from "next/image";
 
 interface Props {
   company: string;
   position: string;
   date: string;
   description: string;
+  image: string;
 }
 
-const ExperienceCard: React.FC<Props> = ({company, position, date, description}) => {
-
+const ExperienceCard: React.FC<Props> = ({
+  company,
+  position,
+  date,
+  description,
+  image,
+}) => {
   return (
     <div className="p-4 flex rounded-xl">
-      <img src="/next.svg" className="size-40"/>
+      <div className="size-32 relative min-w-32 min-h-32 flex justify-center items-center">
+        <Image
+          src={image}
+          layout="responsive"
+          width={50}
+          height={50}
+          className="rounded-sm"
+          alt={""}
+        />
+      </div>
       <div className="pl-4 flex flex-col flex-grow">
         <div className="flex justify-between items-center">
           <div className="flex">
