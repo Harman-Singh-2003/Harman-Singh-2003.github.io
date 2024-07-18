@@ -18,7 +18,7 @@ const ExperienceCard: React.FC<Props> = ({
 }) => {
   return (
     <div className="p-4 flex rounded-xl">
-      <div className="size-32 relative min-w-32 min-h-32 flex justify-center items-center">
+      <div className="size-16 md:size-32 relative flex justify-center items-center">
         <Image
           src={image}
           layout="responsive"
@@ -29,15 +29,15 @@ const ExperienceCard: React.FC<Props> = ({
         />
       </div>
       <div className="pl-4 flex flex-col flex-grow">
-        <div className="flex justify-between items-center">
-          <div className="flex">
-            <div className="text-xl">{company}</div>
-            <div className="text-lg">-</div>
-            <div className="text-lg">{position}</div>
+        <div className="flex flex-col md:flex-row items-baseline justify-between mb-2">
+          <div className="flex space-x-2 items-center">
+            <div className="text-sm md:text-lg text-center">{company}</div>
+            <div className="text-sm md:text-lg">-</div>
+            <div className="text-sm md:text-lg text-center">{position}</div>
           </div>
-          <div className="text-sm">{date}</div>
+          <div className="text-xs md:text-sm">{date}</div>
         </div>
-        <div className="800">{description}</div>
+        <div className="text-xs md:text-base text-slate-300">{description}</div>
       </div>
     </div>
   );
