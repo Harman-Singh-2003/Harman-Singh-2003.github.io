@@ -6,6 +6,7 @@ import ProjectCard from "./Components/ProjectCard";
 import { introData, skillsData, experienceData, projectData } from "./data";
 
 export default function Home() {
+  const basePath = process.env.BASEPATH;
   const Header: React.FC = () => {
     return (
       <div className="flex flex-col md:flex-row justify-around">
@@ -19,18 +20,18 @@ export default function Home() {
         <div className="flex flex-row md:flex-col -mt-4 md:m-4 justify-center">
           <Link
             name="Resume"
-            href="/Files/HarmanSinghResume.pdf"
-            iconSrc="/Images/resumeLogo.png"
+            href={basePath ? `/${basePath}/Files/HarmanSinghResume.pdf` : "/Files/HarmanSinghResume.pdf"}
+            iconSrc={basePath ? `/${basePath}/Images/resumeLogo.png` : "/Images/resumeLogo.png"}
           />
           <Link
             name="Github"
             href="https://github.com/Harman-Singh-2003"
-            iconSrc="/Images/githubLogo.png"
+            iconSrc={basePath ? `/${basePath}/Images/githubLogo.png` : "/Images/githubLogo.png"}
           />
           <Link
             name="LinkedIn"
             href="https://www.linkedin.com/in/harman-singh2003/"
-            iconSrc="/Images/linkedinLogo.webp"
+            iconSrc={basePath ? `/${basePath}/Images/linkedinLogo.webp` : "/Images/linkedinLogo.webp"}
           />
         </div>
       </div>
