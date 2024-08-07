@@ -37,7 +37,7 @@ export const experienceData = [
 
       </p>
     ),
-    image: `${basePath}/Images/CienaLogo.png`,
+    image: `${basePath}Images/CienaLogo.png`,
   },
   {
     company: "Wave",
@@ -46,101 +46,101 @@ export const experienceData = [
     description: (<p>
      Built reusable UI components in React Native and TypeScript, ensuring consistency across the mobile and web applications. I also streamlined data retrieval and caching using GraphQL and Apollo, improving app performance. Also created bug fixes and manage database migrations in Django. Furthermore, I improved monitoring and alerting systems with Terraform and Datadog. My work on AWS S3 buckets led to a significant storage cost reduction by deleting unused data (nearly 9 TB!).
       </p>),
-    image: `${basePath}/Images/WaveLogo.webp`,
+    image: `${basePath}Images/WaveLogo.webp`,
   },
   {
     company: "CBG",
     position: "Programmer Co-op",
     date: "June 2023 - August 2023",
     description: (<p>I modernized their PHP data acces layer (5.3 to 8.1) for enhanced security and PostgreSQL compatibility. I created integration tests (PHPUnit) and documented testing procedures for future engineers. I also automated testing with bash scripts, streamlining the process and ensuring data consistency. This project improved data security and established a robust testing framework.</p>),
-    image: `${basePath}/Images/CBGLogo.png`,
+    image: `${basePath}Images/CBGLogo.png`,
   },
 ];
 
 export const skillsData: SkillsData = {
   typescript: {
     text: "TypeScript",
-    imgSrc: `${basePath}/Images/typescriptLogo.png`,
+    imgSrc: `${basePath}Images/typescriptLogo.png`,
     altText: "TypeScript Logo",
   },
   javascript: {
     text: "JavaScript",
-    imgSrc: `${basePath}/Images/javascriptLogo.png`,
+    imgSrc: `${basePath}Images/javascriptLogo.png`,
     altText: "JavaScript Logo",
   },
   react: {
     text: "React",
-    imgSrc: `${basePath}/Images/reactLogo.png`,
+    imgSrc: `${basePath}Images/reactLogo.png`,
     altText: "React Logo",
   },
   nextjs: {
     text: "Next.js",
-    imgSrc: `${basePath}/Images/nextjsLogo.png`,
+    imgSrc: `${basePath}Images/nextjsLogo.png`,
     altText: "Next.js Logo",
   },
   python: {
     text: "Python",
-    imgSrc: `${basePath}/Images/pythonLogo.png`,
+    imgSrc: `${basePath}Images/pythonLogo.png`,
     altText: "Python Logo",
   },
   html: {
     text: "HTML",
-    imgSrc: `${basePath}/Images/htmlLogo.png`,
+    imgSrc: `${basePath}Images/htmlLogo.png`,
     altText: "HTML Logo",
   },
   css: {
     text: "CSS",
-    imgSrc: `${basePath}/Images/cssLogo.png`,
+    imgSrc: `${basePath}Images/cssLogo.png`,
     altText: "CSS Logo",
   },
   mysql: {
     text: "MySQL",
-    imgSrc: `${basePath}/Images/mysqlLogo.png`,
+    imgSrc: `${basePath}Images/mysqlLogo.png`,
     altText: "MySQL Logo",
   },
   postgresql: {
     text: "PostgreSQL",
-    imgSrc: `${basePath}/Images/postgresqlLogo.png`,
+    imgSrc: `${basePath}Images/postgresqlLogo.png`,
     altText: "PostgreSQL Logo",
   },
   php: {
     text: "PHP",
-    imgSrc: `${basePath}/Images/phpLogo.png`,
+    imgSrc: `${basePath}Images/phpLogo.png`,
     altText: "PHP Logo",
   },
   terraform: {
     text: "Terraform",
-    imgSrc: `${basePath}/Images/terraformLogo.png`,
+    imgSrc: `${basePath}Images/terraformLogo.png`,
     altText: "Terraform Logo",
   },
   cpp: {
     text: "C++",
-    imgSrc: `${basePath}/Images/cppLogo.png`,
+    imgSrc: `${basePath}Images/cppLogo.png`,
     altText: "C++ Logo",
   },
   graphql: {
     text: "GraphQL",
-    imgSrc: `${basePath}/Images/graphqlLogo.png`,
+    imgSrc: `${basePath}Images/graphqlLogo.png`,
     altText: "GraphQL Logo",
   },
   fastapi: {
     text: "FastAPI",
-    imgSrc: `${basePath}/Images/fastapiLogo.png`,
+    imgSrc: `${basePath}Images/fastapiLogo.png`,
     altText: "FastAPI Logo",
   },
   django: {
     text: "Django",
-    imgSrc: `${basePath}/Images/djangoLogo.png`,
+    imgSrc: `${basePath}Images/djangoLogo.png`,
     altText: "Django Logo",
   },
   git: {
     text: "Git",
-    imgSrc: `${basePath}/Images/gitLogo.png`,
+    imgSrc: `${basePath}Images/gitLogo.png`,
     altText: "Git Logo",
   },
   githubActions: {
     text: "Github Actions",
-    imgSrc: `${basePath}/Images/githubActionsLogo.png`,
+    imgSrc: `${basePath}Images/githubActionsLogo.png`,
     altText: "Github Actions Logo",
   },
 };
@@ -149,17 +149,17 @@ export const projectData = [
   {
     title: "Project 1",
     description: "Description 1",
-    image: `${basePath}/Images/CienaLogo.png`,
+    image: `${basePath}Images/CienaLogo.png`,
   },
   {
     title: "Project 2",
     description: "Description 2",
-    image: `${basePath}/Images/CienaLogo.png`,
+    image: `${basePath}Images/CienaLogo.png`,
   },
   {
     title: "Project 3",
     description: "Description 3",
-    image: `${basePath}/Images/CienaLogo.png`,
+    image: `${basePath}Images/CienaLogo.png`,
   },
 ];
 
