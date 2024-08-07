@@ -10,11 +10,31 @@ const config: Config = {
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideInFromBottom: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(100%)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
+      },
+      animation: {
+        'fade-in': 'fadeIn 1s ease-out backwards',
+        'slide-in-bottom': 'slideInFromBottom 1s cubic-bezier(0,0,.5,1) backwards',
       },
     },
   },
   plugins: [],
 };
+
 export default config;

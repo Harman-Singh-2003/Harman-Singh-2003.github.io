@@ -65,6 +65,7 @@ export default function Home() {
               text={skill.text}
               imgSrc={skill.imgSrc}
               altText={skill.altText}
+              delay={`${index * 0.1}s`}
             />
           );
         })}
@@ -83,6 +84,7 @@ export default function Home() {
             date={experience.date}
             description={experience.description}
             image={experience.image}
+            delay={`${index * 0.1}s`}
           />
         ))}
       </div>
@@ -98,6 +100,7 @@ export default function Home() {
             title={Project.title}
             description={Project.description}
             image={Project.image}
+            delay={`${index * 0.1}s`}
           />
         ))}
       </div>
@@ -123,10 +126,10 @@ export default function Home() {
           Experience
         </div>
         <Experience />
-        <div className="p-4 text-left text-2xl font-bold border-b-2 border-white border-opacity-20">
+        {/* <div className="p-4 text-left text-2xl font-bold border-b-2 border-white border-opacity-20">
           Projects
         </div>
-        <Projects />
+        <Projects /> */}
       </div>
     </main>
   );

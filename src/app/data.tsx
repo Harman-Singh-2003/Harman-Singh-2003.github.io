@@ -1,48 +1,61 @@
 interface SkillData {
-    text: string;
-    imgSrc: string;
-    altText: string;
-  }
-  
-  interface SkillsData {
-    [key: string]: SkillData;
-  }
+  text: string;
+  imgSrc: string;
+  altText: string;
+}
+
+interface SkillsData {
+  [key: string]: SkillData;
+}
 
 const basePath = process.env.BASEPATH;
 
 export const introData = {
-    name: "Harman Singh",
-    subheading: "Aspiring Software Engineer",
-    mainText:
-      "Completed my third year of Engineering at the University of Guelph. I am passionate about software development and am always looking to learn new technologies and improve my skills.",
-    resumeLink: "Resume",
-    githubLink: "Github",
-    linkedin: "LinkedIn",
-  };
+  name: "Harman Singh",
+  subheading: "Aspiring Software Engineer",
+  mainText:
+    "Completed my third year of Engineering at the University of Guelph. I am passionate about software development and am always looking to learn new technologies and improve my skills.",
+  resumeLink: "Resume",
+  githubLink: "Github",
+  linkedin: "LinkedIn",
+};
 
 export const experienceData = [
   {
     company: "Ciena",
     position: "Internal Tools Developer Intern",
     date: "May 2024 - Present",
-    description: "Description 1",
+    description: (
+      <p>
+        • Developed an entire backend to increase the security team's efficiency
+        at managing vulnerabilities using <b>Python</b> and <b>FastAPI</b>
+        <br />
+        • Secured access to the backend by implementing <b>Authentication and Authorization</b> using <b>OAuth2</b> and <b>Okta</b>
+        <br />
+        • Created automated deploys to Github pages using custom <b>workflows</b> through Github Actions
+        <br />
+
+      </p>
+    ),
     image: `${basePath}/Images/CienaLogo.png`,
   },
   {
     company: "Wave",
     position: "Software Engineer Intern",
     date: "January 2024 - April 2024",
-    description: "Description 2",
+    description: (<p>
+     Built reusable UI components in React Native and TypeScript, ensuring consistency across the mobile and web applications. I also streamlined data retrieval and caching using GraphQL and Apollo, improving app performance. Also created bug fixes and manage database migrations in Django. Furthermore, I improved monitoring and alerting systems with Terraform and Datadog. My work on AWS S3 buckets led to a significant storage cost reduction by deleting unused data (nearly 9 TB!).
+      </p>),
     image: `${basePath}/Images/WaveLogo.webp`,
   },
   {
     company: "CBG",
     position: "Programmer Co-op",
     date: "June 2023 - August 2023",
-    description: "Description 3",
+    description: (<p>I modernized their PHP data acces layer (5.3 to 8.1) for enhanced security and PostgreSQL compatibility. I created integration tests (PHPUnit) and documented testing procedures for future engineers. I also automated testing with bash scripts, streamlining the process and ensuring data consistency. This project improved data security and established a robust testing framework.</p>),
     image: `${basePath}/Images/CBGLogo.png`,
   },
-  ];
+];
 
 export const skillsData: SkillsData = {
   typescript: {
@@ -130,8 +143,8 @@ export const skillsData: SkillsData = {
     imgSrc: `${basePath}/Images/githubActionsLogo.png`,
     altText: "Github Actions Logo",
   },
-  };
-  
+};
+
 export const projectData = [
   {
     title: "Project 1",
@@ -148,5 +161,6 @@ export const projectData = [
     description: "Description 3",
     image: `${basePath}/Images/CienaLogo.png`,
   },
+];
 
-  ];
+// TODO: Add AWS, Oauth2 or auth, maybe okta,

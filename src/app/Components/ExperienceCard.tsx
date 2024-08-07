@@ -1,12 +1,15 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 interface Props {
   company: string;
   position: string;
   date: string;
-  description: string;
+  description: string | JSX.Element;
   image: string;
+  delay?: string;
 }
 
 const ExperienceCard: React.FC<Props> = ({
@@ -15,10 +18,43 @@ const ExperienceCard: React.FC<Props> = ({
   date,
   description,
   image,
+  delay = "0s",
 }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="p-4 flex rounded-xl">
-      <div className="size-16 md:size-32 relative flex justify-center items-center">
+<div
+  ref={ref}
+  className={`p-4 flex rounded-xl ${
+    isVisible ? `animate-fade-in animate-slide-in-bottom` : "opacity-0"
+  }`}
+  style={{ animationDelay: isVisible ? delay : undefined }}
+>
+      <div className="size-12 md:size-32 relative flex justify-center items-center flex-shrink-0">
         <Image
           src={image}
           layout="responsive"
@@ -29,20 +65,20 @@ const ExperienceCard: React.FC<Props> = ({
         />
       </div>
       <div className="pl-4 flex flex-col flex-grow">
-        <div className="flex flex-col md:flex-row items-baseline justify-between mb-2">
+        <div className="flex flex-col md:flex-row items-baseline justify-between mb-4 md:mb-2">
           <div className="flex space-x-2 items-center">
             <div className="text-sm md:text-lg text-center">{company}</div>
             <div className="text-sm md:text-lg">-</div>
             <div className="text-sm md:text-lg text-center">{position}</div>
           </div>
-          <div className="text-xs md:text-sm">{date}</div>
+          <div className="text-sm md:text-sm">{date}</div>
         </div>
-        <div className="text-xs md:text-base text-slate-300">{description}</div>
+        <div className="text-sm md:text-base text-slate-300 -ml-14 md:ml-0">
+          {description}
+        </div>
       </div>
     </div>
   );
 };
-
-//bg-white bg-opacity-20 backdrop-blur-xl shadow-[inset_0px_0px_50px_5px_rgba(255,255,255,0.15)]
 
 export default ExperienceCard;
