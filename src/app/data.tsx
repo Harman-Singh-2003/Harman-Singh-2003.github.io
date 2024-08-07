@@ -27,7 +27,7 @@ export const experienceData = [
     date: "May 2024 - Present",
     description: (
       <p>
-        • Developed an entire backend to increase the security team's efficiency
+        • Developed an entire backend to increase the security team&apos;s efficiency
         at managing vulnerabilities using <b>Python</b> and <b>FastAPI</b>
         <br />
         • Secured access to the backend by implementing <b>Authentication and Authorization</b> using <b>OAuth2</b> and <b>Okta</b>
