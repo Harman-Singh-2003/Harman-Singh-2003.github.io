@@ -29,7 +29,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      BASEPATH: /portfolio
+      BASEPATH: /
     steps:
       - name: Checkout
         uses: actions/checkout@v4
