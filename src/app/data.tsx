@@ -41,7 +41,7 @@ export const experienceData = [
         the project.
       </p>
     ),
-    image: `${basePath}/Images/CienaLogo.png`,
+    image: `/Images/CienaLogo.png`,
   },
   {
     company: "Wave",
@@ -58,7 +58,7 @@ export const experienceData = [
         storage cost reduction by deleting unused data (nearly 9 TB!).
       </p>
     ),
-    image: `${basePath}/Images/WaveLogo.webp`,
+    image: `/Images/WaveLogo.webp`,
   },
   {
     company: "CBG",
@@ -74,94 +74,94 @@ export const experienceData = [
         established a robust testing framework.
       </p>
     ),
-    image: `${basePath}/Images/CBGLogo.png`,
+    image: `/Images/CBGLogo.png`,
   },
 ];
 
 export const skillsData: SkillsData = {
   typescript: {
     text: "TypeScript",
-    imgSrc: `${basePath}/Images/typescriptLogo.png`,
+    imgSrc: `/Images/typescriptLogo.png`,
     altText: "TypeScript Logo",
   },
   javascript: {
     text: "JavaScript",
-    imgSrc: `${basePath}/Images/javascriptLogo.png`,
+    imgSrc: `/Images/javascriptLogo.png`,
     altText: "JavaScript Logo",
   },
   react: {
     text: "React",
-    imgSrc: `${basePath}/Images/reactLogo.png`,
+    imgSrc: `/Images/reactLogo.png`,
     altText: "React Logo",
   },
   nextjs: {
     text: "Next.js",
-    imgSrc: `${basePath}/Images/nextjsLogo.png`,
+    imgSrc: `/Images/nextjsLogo.png`,
     altText: "Next.js Logo",
   },
   python: {
     text: "Python",
-    imgSrc: `${basePath}/Images/pythonLogo.png`,
+    imgSrc: `/Images/pythonLogo.png`,
     altText: "Python Logo",
   },
   html: {
     text: "HTML",
-    imgSrc: `${basePath}/Images/htmlLogo.png`,
+    imgSrc: `/Images/htmlLogo.png`,
     altText: "HTML Logo",
   },
   css: {
     text: "CSS",
-    imgSrc: `${basePath}/Images/cssLogo.png`,
+    imgSrc: `/Images/cssLogo.png`,
     altText: "CSS Logo",
   },
   mysql: {
     text: "MySQL",
-    imgSrc: `${basePath}/Images/mysqlLogo.png`,
+    imgSrc: `/Images/mysqlLogo.png`,
     altText: "MySQL Logo",
   },
   postgresql: {
     text: "PostgreSQL",
-    imgSrc: `${basePath}/Images/postgresqlLogo.png`,
+    imgSrc: `/Images/postgresqlLogo.png`,
     altText: "PostgreSQL Logo",
   },
   php: {
     text: "PHP",
-    imgSrc: `${basePath}/Images/phpLogo.png`,
+    imgSrc: `/Images/phpLogo.png`,
     altText: "PHP Logo",
   },
   terraform: {
     text: "Terraform",
-    imgSrc: `${basePath}/Images/terraformLogo.png`,
+    imgSrc: `/Images/terraformLogo.png`,
     altText: "Terraform Logo",
   },
   cpp: {
     text: "C++",
-    imgSrc: `${basePath}/Images/cppLogo.png`,
+    imgSrc: `/Images/cppLogo.png`,
     altText: "C++ Logo",
   },
   graphql: {
     text: "GraphQL",
-    imgSrc: `${basePath}/Images/graphqlLogo.png`,
+    imgSrc: `/Images/graphqlLogo.png`,
     altText: "GraphQL Logo",
   },
   fastapi: {
     text: "FastAPI",
-    imgSrc: `${basePath}/Images/fastapiLogo.png`,
+    imgSrc: `/Images/fastapiLogo.png`,
     altText: "FastAPI Logo",
   },
   django: {
     text: "Django",
-    imgSrc: `${basePath}/Images/djangoLogo.png`,
+    imgSrc: `/Images/djangoLogo.png`,
     altText: "Django Logo",
   },
   git: {
     text: "Git",
-    imgSrc: `${basePath}/Images/gitLogo.png`,
+    imgSrc: `/Images/gitLogo.png`,
     altText: "Git Logo",
   },
   githubActions: {
     text: "Github Actions",
-    imgSrc: `${basePath}/Images/githubActionsLogo.png`,
+    imgSrc: `/Images/githubActionsLogo.png`,
     altText: "Github Actions Logo",
   },
 };
@@ -170,7 +170,7 @@ export const projectData = [
   {
     title: "Edge Detection Website",
     description: (<p>This web application showcases edge detection using JavaScript. Users can upload an image which is then processed directly in the browser to identify and highlight edges through grayscale conversion, Gaussian blurring, and pixel comparison, resulting in a high-contrast image emphasizing outlines.</p>),
-    image: `${basePath}/Images/external-link.png`,
+    image: `/Images/external-link.png`,
   },
 
 ];

@@ -6,6 +6,7 @@ import ProjectCard from "./Components/ProjectCard";
 import { introData, skillsData, experienceData, projectData } from "./data";
 
 export default function Home() {
+  console.log(skillsData)
   const basePath = process.env.BASEPATH;
   const Header: React.FC = () => {
     return (
@@ -63,7 +64,7 @@ export default function Home() {
             <Skill
               key={index}
               text={skill.text}
-              imgSrc={skill.imgSrc}
+              imgSrc={basePath? `${basePath}${skill.imgSrc}` : `${skill.imgSrc}`}
               altText={skill.altText}
               delay={`${index * 0.1}s`}
             />
@@ -83,7 +84,7 @@ export default function Home() {
             position={experience.position}
             date={experience.date}
             description={experience.description}
-            image={experience.image}
+            image={basePath? `${basePath}${experience.image}`: experience.image}
             delay={`${index * 0.1}s`}
           />
         ))}
