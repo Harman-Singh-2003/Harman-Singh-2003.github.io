@@ -22,61 +22,106 @@ export const introData = {
 
 export const experienceData = [
   {
+    company: "Citi",
+    position: "Software Engineer Intern",
+    date: "May 2025 - Aug 2025",
+    description: (
+      <div>
+        <ul>
+          <li>
+            • Saved 5+ hours/week on compliance audits and enabled real-time dependency visibility by automating aggregation and tracking across 90+ repositories with Python and Autosys.
+          </li>
+          <li>
+            • Built real-time health alerts using Python, RabbitMQ, and MongoDB, eliminating nightly manual checks and reducing on-call disruptions.
+          </li>
+          <li>
+            • Cut deploy time by up to 95% by creating an OpenShift/Kubernetes Bash CLI to scale services to target pod counts, consolidating 100+ scripts and removing 150+ automated jobs.
+          </li>
+          <li>
+            • Created CI/CD pipelines to automate deploys using Tekton and Harness.
+          </li>
+        </ul>
+      </div>
+    ),
+    image: `/Images/CitiLogo.png`,
+  },
+  {
     company: "Ciena",
     position: "Internal Tools Developer Intern",
-    date: "May 2024 - Present",
+    date: "May 2024 - Aug 2024",
     description: (
-      <p>
-         I contributed to enhancing device security by creating a backend API
-        using FastAPI and Python. This API empowered the security team to
-        efficiently manage vulnerable assets. I was involved in the entire
-        development lifecycle, encompassing backend, frontend, and database
-        migrations to deliver a comprehensive solution within my internship. To
-        protect sensitive backend data, I implemented robust authentication and
-        authorization mechanisms utilizing JWTs and Okta. Furthermore, I
-        streamlined the deployment process by automating builds and deploys,
-        enabling the security team to access real-time information on company
-        devices and vulnerabilities. Currently, I am developing a Next.js
-        frontend and assisting in establishing the infrastructure to complete
-        the project.
-      </p>
+      <div>
+        <ul>
+          <li>
+            • Implemented a backend REST API with Python and FastAPI to manage infrastructure security vulnerabilities, reducing vulnerabilities across company devices by ~30%.
+          </li>
+          <li>
+            • Led planning, scheduling, and backend/database development; coordinated with stakeholders for requirements and user input.
+          </li>
+          <li>
+            • Added authentication/authorization with JWTs and Okta to protect backend resources.
+          </li>
+          <li>
+            • Automated builds and deploys with GitHub Actions, providing the security team with up-to-date vulnerability data.
+          </li>
+          <li>
+            • Deployed AWS API Gateway and Lambda with Terraform for company-wide access to the application.
+          </li>
+        </ul>
+      </div>
     ),
     image: `/Images/CienaLogo.png`,
   },
   {
-    company: "Wave",
-    position: "Software Engineer Intern",
-    date: "January 2024 - April 2024",
+    company: "Wave Financial",
+    position: "Software Engineer Co-op",
+    date: "Jan 2024 - Apr 2024",
     description: (
-      <p>
-        Built reusable UI components in React Native and TypeScript, ensuring
-        consistency across the mobile and web applications. I also streamlined
-        data retrieval and caching using GraphQL and Apollo, improving app
-        performance. Also created bug fixes and manage database migrations in
-        Django. Furthermore, I improved monitoring and alerting systems with
-        Terraform and Datadog. My work on AWS S3 buckets led to a significant
-        storage cost reduction by deleting unused data (nearly 9 TB!).
-      </p>
+      <div>
+        <ul>
+          <li>
+            • Developed and maintained accounting microservices with Python and Django, improving stability and UX.
+          </li>
+          <li>
+            • Optimized AWS S3 using lifecycle policies, saving about $2K per year.
+          </li>
+          <li>
+            • Built UI for a mobile app with 100,000+ active users using React Native, HTML/CSS, JavaScript/TypeScript, and GraphQL.
+          </li>
+          <li>
+            • Drove data decisions with Redshift and SQL by analyzing 10,000+ data points for the ML team.
+          </li>
+          <li>
+            • Reduced incident response time by implementing automated Slack alerts via Datadog and Terraform.
+          </li>
+        </ul>
+      </div>
     ),
     image: `/Images/WaveLogo.webp`,
   },
   {
-    company: "CBG",
+    company: "Centre for Biodiversity Genomics",
     position: "Programmer Co-op",
-    date: "June 2023 - August 2023",
+    date: "Jun 2023 - Sep 2023",
     description: (
-      <p>
-        I modernized their PHP data acces layer (5.3 to 8.1) for enhanced
-        security and PostgreSQL compatibility. I created integration tests
-        (PHPUnit) and documented testing procedures for future engineers. I also
-        automated testing with bash scripts, streamlining the process and
-        ensuring data consistency. This project improved data security and
-        established a robust testing framework.
-      </p>
+      <div>
+        <ul>
+          <li>
+            • Improved performance, security, and stability for the backend of the world’s largest DNA barcode repository (10M+ specimen records) by migrating PHP 5.3 → 8.1.
+          </li>
+          <li>
+            • Led code review of the database access layer, fixing bugs and improving maintainability.
+          </li>
+          <li>
+            • Refactored legacy PostgreSQL queries to enhance security, speed, and maintainability.
+          </li>
+        </ul>
+      </div>
     ),
     image: `/Images/CBGLogo.png`,
   },
 ];
+
 
 export const skillsData: SkillsData = {
   typescript: {
