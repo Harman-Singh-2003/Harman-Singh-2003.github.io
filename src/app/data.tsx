@@ -14,7 +14,7 @@ export const introData = {
   name: "Harman Singh",
   subheading: "Aspiring Software Engineer",
   mainText:
-    "Completed my third year of Engineering at the University of Guelph. I am passionate about software development and am always looking to learn new technologies and improve my skills.",
+    "Final year Engineering Systems and Computing student at the University of Guelph. Seek new grad 2026 SWE positions.",
   resumeLink: "Resume",
   githubLink: "Github",
   linkedin: "LinkedIn",
