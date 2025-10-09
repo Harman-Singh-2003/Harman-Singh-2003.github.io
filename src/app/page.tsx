@@ -1,136 +1,39 @@
 import React from "react";
-import ExperienceCard from "./Components/ExperienceCard";
-import Skill from "./Components/Skill";
-import Link from "./Components/Link";
-import ProjectCard from "./Components/ProjectCard";
-import { introData, skillsData, experienceData, projectData } from "./data";
+import { Experience } from "./Components/ExperienceCard";
+import { Projects } from "./Components/ProjectCard";
+import { Header } from "./Components/Header";
+import { introData, skillsData } from "./data";
 
 export default function Home() {
-  console.log(skillsData)
   const basePath = process.env.BASEPATH;
-  const Header: React.FC = () => {
-    return (
-      <div className="flex flex-col md:flex-row justify-around">
-        <div className="flex-col m-4 flex-grow">
-          <div className="my-4 text-5xl md:text-8xl font-bold">{introData.name}</div>
-          <div className="my-4 ml-2 text-xl">{introData.subheading}</div>
-          <div className="my-8 ml-2 text-base text-slate-300">
-            {introData.mainText}
-          </div>
-        </div>
-        <div className="flex flex-row md:flex-col -mt-4 md:m-4 justify-center">
-          <Link
-            name="Resume"
-            href={basePath ? `${basePath}/Files/HarmanSinghResume.pdf` : "/Files/HarmanSinghResume.pdf"}
-            iconSrc={basePath ? `${basePath}/Images/resumeLogo.png` : "/Images/resumeLogo.png"}
-          />
-          <Link
-            name="Github"
-            href="https://github.com/Harman-Singh-2003"
-            iconSrc={basePath ? `${basePath}/Images/githubLogo.png` : "/Images/githubLogo.png"}
-          />
-          <Link
-            name="LinkedIn"
-            href="https://www.linkedin.com/in/harman-singh2003/"
-            iconSrc={basePath ? `${basePath}/Images/linkedinLogo.webp` : "/Images/linkedinLogo.webp"}
-          />
-        </div>
-      </div>
-    );
-  };
-
-  const NavBar: React.FC = () => {
-    return (
-      <div className="bg-cyan-400 flex justify-center border-b-4 border-red-600">
-        <div>
-          <a href="#">Skills</a>
-        </div>
-        <div>
-          <a href="#">Experience</a>
-        </div>
-        <div>
-          <a href="#">Projects</a>
-        </div>
-      </div>
-    );
-  };
-
-  const Skills: React.FC = () => {
-    return (
-      <div className="m-4 flex flex-wrap justify-center md:justify-start">
-        {Object.keys(skillsData).map((key, index) => {
-          const skill = skillsData[key];
-          return (
-            <Skill
-              key={index}
-              text={skill.text}
-              imgSrc={basePath? `${basePath}${skill.imgSrc}` : `${skill.imgSrc}`}
-              altText={skill.altText}
-              delay={`${index * 0.1}s`}
-            />
-          );
-        })}
-      </div>
-    );
-  };
-
-  const Experience: React.FC = () => {
-    return (
-      <div className="md:px-8 space-y-4">
-        {experienceData.map((experience, index) => (
-          <ExperienceCard
-            key={index}
-            company={experience.company}
-            position={experience.position}
-            date={experience.date}
-            description={experience.description}
-            image={basePath? `${basePath}${experience.image}`: experience.image}
-            delay={`${index * 0.1}s`}
-          />
-        ))}
-      </div>
-    );
-  };
-
-  const Projects: React.FC = () => {
-    return (
-      <div className="md:px-8 space-y-4">
-        {projectData.map((Project, index) => (
-          <ProjectCard
-            key={index}
-            title={Project.title}
-            description={Project.description}
-            image={Project.image}
-            delay={`${index * 0.1}s`}
-          />
-        ))}
-      </div>
-    );
-  };
+  const backgroundImage = basePath ? `${basePath}/Images/Background.jpg` : "/Images/Background.jpg";
 
   return (
     <main
-      className="bg-gradient-to-br"
+      className="min-h-screen relative bg-noise"
       style={{
-        background:
-          "radial-gradient(circle, rgba(0,11,74,1) 0%, rgba(9,14,23,1) 88%)",
+        backgroundImage: `url('${backgroundImage}')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+        backgroundColor: "#05070d",
       }}
     >
-      <div className="mx-auto min-h-screen max-w-screen-xl">
-        <Header />
-        {/* <NavBar /> */}
-        <div className="p-4 text-left text-2xl font-bold border-b-2 border-white border-opacity-20">
-          Skills
-        </div>
-        <Skills />
-        <div className="p-4 text-left text-2xl font-bold border-b-2 border-white border-opacity-20">
-          Experience
-        </div>
+      {/* Hero section with integrated skills carousel */}
+      <Header
+        name={introData.name}
+        subheading={introData.subheading}
+        mainText={introData.mainText}
+        resumeLink={introData.resumeLink}
+        githubLink={introData.githubLink}
+        linkedinLink={introData.linkedin}
+        basePath={basePath}
+        skills={skillsData}
+      />
+      <Projects />
+      {/* Main content sections - minimal spacing for smooth transitions */}
+      <div className="pt-2">
         <Experience />
-        {/* <div className="p-4 text-left text-2xl font-bold border-b-2 border-white border-opacity-20">
-          Projects
-        </div>
-        <Projects /> */}
       </div>
     </main>
   );

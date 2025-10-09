@@ -1,88 +1,82 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import React from "react";
+import { Card, CardHeader, CardContent, CardTitle, CardDescription } from "./ui/card";
+import { Badge } from "./ui/badge";
+import { Button } from "./ui/button";
+import { Github, ExternalLink } from "./ui/icons";
+import { projectData, type ProjectData } from "../data";
 
-interface ProjectProps {
-  title: string;
-  description: string | JSX.Element;
-  image: string;
-  delay?: string;
-}
-
-const ProjectCard: React.FC<ProjectProps> = ({
-  title,
-  description,
-  image,
-  delay = "0s",
-}) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, []);
-
+export function Projects() {
   return (
-    <div
-      ref={ref}
-      className={`p-4 flex rounded-xl ${
-        isVisible ? `animate-fade-in animate-slide-in-bottom` : "opacity-0"
-      }`}
-      style={{ animationDelay: isVisible ? delay : undefined }}
-    >
-      {" "}
-      <div className="flex flex-col flex-grow">
-        <div className="flex justify-between items-center">
-          <div className="flex flex-row mb-4 md:mb-2 items-center">
-            <div className="text-xl">{title}</div>
-            <div className="md:hidden size-8 md:size-24 m-2 relative flex justify-center items-center flex-shrink-0 rounded-md p-1 bg-white bg-opacity-20 backdrop-blur-xl shadow-[inset_0px_0px_40px_0px_rgba(255,255,255,0.25)]">
-              <Image
-                src={image}
-                layout="responsive"
-                width={50}
-                height={50}
-                className="rounded-sm"
-                alt={""}
-              />
-            </div>
+    <section className="relative w-full overflow-hidden">
+      <div className="container mx-auto px-6 py-6 md:py-10 max-w-7xl">
+        <div className="space-y-12">
+          <div className="space-y-4">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Projects</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projectData.map((project, index) => (
+              <Card key={index} className="group hover:border-accent transition-colors">
+              <CardHeader className="p-0">
+                <div className="aspect-video overflow-hidden rounded-t-lg bg-slate-800 bg-opacity-50">
+                  <img
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              </CardHeader>
+              <CardContent className="p-6 space-y-4">
+                <div className="space-y-2">
+                  <CardTitle className="text-xl">{project.title}</CardTitle>
+                  <CardDescription className="leading-relaxed">{project.description}</CardDescription>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags?.map((tag) => (
+                    <Badge key={tag} variant="secondary">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+                <div className="flex gap-2 pt-2">
+                  {project.github && project.github !== "#" && (
+                    <Button size="sm" variant="outline" asChild className="gap-2 bg-transparent">
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Github className="h-4 w-4" />
+                        Code
+                      </a>
+                    </Button>
+                  )}
+                  {project.demo && project.demo !== "#" && (
+                    <Button size="sm" variant="outline" asChild className="gap-2 bg-transparent">
+                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4" />
+                        Demo
+                      </a>
+                    </Button>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+            ))}
           </div>
         </div>
-        <div className="text-sm md:text-base text-slate-300 md:ml-0">
-          {description}
-        </div>
       </div>
-      <div className="hidden size-12 md:size-24 m-4 relative md:flex justify-center items-center flex-shrink-0 rounded-2xl p-6 bg-white bg-opacity-10 backdrop-blur-xl shadow-[inset_0px_0px_50px_0px_rgba(255,255,255,0.15)]">
-        <Image
-          src={image}
-          layout="responsive"
-          width={50}
-          height={50}
-          className="rounded-sm"
-          alt={""}
+
+      {/* Bottom separator - opacity gradient divider */}
+      <div className="absolute bottom-0 left-0 right-0 h-px pointer-events-none flex justify-center">
+        <div 
+          className="w-full max-w-7xl h-full"
+          style={{
+            background: "white",
+            opacity: 0.1,
+            maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+            WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+          }}
         />
       </div>
-    </div>
+    </section>
   );
-};
-
-export default ProjectCard;
+}

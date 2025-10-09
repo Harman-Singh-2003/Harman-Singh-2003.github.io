@@ -3,31 +3,58 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  /* Color variables for glow effects */
+  --bg-deep: #05070d;
+  --glow-cyan: 34 211 238;
+  --glow-violet: 139 92 246;
+  --glow-fuchsia: 232 121 249;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: #e6e8ee;
+  min-height: 100svh;
+}
+
+/* Subtle grain/noise overlay (prevents gradient banding) */
+.bg-noise::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADnSURBVHgB7doxDoJAFATQWRILOYHcwFuw9ATegBNwA3sCbmBBYUGvvYWJBRR8n5k/CQkFO8u8KsxmFgAAAAAAAMAfNse+LGvbtRKiabpuCZJN0w5Tk8R+T6K0w8SE7EK2IduQjch2yJIXWc4iyz9keQxZHkOWx5DlMWS5RZbrP2TFieyQPZE9kT2RPZE9s30VIdu0T+5E0xfZLlEZIcvXkLwt+BqQF7K8kuUDsnyQ5QWyPIMszyDL7T5k+RqyfA1ZvmSRtXZvU0U2a6Zr0/eRFJGd8nmNkqbpluN8/+xqAAAAAAAAgMl8AIOcx4mMhRZIAAAAAElFTkSuQmCC");
+  background-repeat: repeat;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+}
+
+/* Optional: reduce heavy effects for low-power or old phones */
+@supports not (backdrop-filter: blur(1px)) {
+  .card-fallback {
+    background: rgba(17, 25, 40, 0.9) !important;
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  
+  /* Hide scrollbar for skills carousel while keeping functionality */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Respect user's motion preferences - disable animations if requested */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
