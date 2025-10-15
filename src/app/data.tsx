@@ -195,13 +195,13 @@ export const skillsData: SkillsData = {
 
 export const projectData: ProjectData[] = [
   {
-    title: "Ventr — Safer Walking Routes",
+    title: "Polaris — Safer Walking Routes",
     description:
       "Web app that shows safest and fastest routes in Toronto using a risk-weighted graph and caching to keep responses fast.",
     tags: ["Python", "FastAPI", "NetworkX", "React", "Next.js", "Mapbox", "AWS", "Nginx", "Cloudflare"],
     image: "/Images/Ventr.png",
     github: "#",
-    demo: "https://ventr.harman-singh.com",
+    demo: "https://polaris.harman-singh.com",
   },
   {
     title: "Gryphspace — Campus Free Room Locator",
