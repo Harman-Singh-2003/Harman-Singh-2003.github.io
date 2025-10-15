@@ -34,7 +34,7 @@ export const introData = {
   name: "Harman Singh",
   subheading: "Aspiring Software Engineer",
   mainText:
-    "Final year Engineering Systems and Computing student at the University of Guelph. Seek new grad 2026 SWE positions.",
+    "Final year Engineering Systems and Computing student at the University of Guelph. Seeking new grad 2026 software engineering positions.",
   resumeLink: "Resume",
   githubLink: "Github",
   linkedin: "LinkedIn",
@@ -217,7 +217,7 @@ export const projectData: ProjectData[] = [
     description:
       "3D-printed robotic arm with C++ and Python control on Arduino and Raspberry Pi for precise motor control.",
     tags: ["C++", "Python", "Arduino", "Raspberry Pi", "SolidWorks", "Fusion 360"],
-    image: "/Images/robot-arm.png",
+    image: "/Images/robot-arm.JPG",
     github: "#",
     demo: "#",
   },
